@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/pixel"
     android:orientation="vertical"
     tools:context=".GameMode">
 
@@ -21,6 +22,7 @@
         android:layout_height="100dp"
         android:layout_gravity="center"
         android:layout_margin="10dp"
+        android:background="@drawable/classic_button"
         android:text="EASY"
         android:textSize="40sp"/>
 
@@ -30,6 +32,7 @@
         android:layout_height="100dp"
         android:layout_gravity="center"
         android:layout_margin="10dp"
+        android:background="@drawable/classic_button"
         android:text="MEDIUM"
         android:textSize="40sp"/>
 
@@ -39,6 +42,7 @@
         android:layout_height="100dp"
         android:layout_gravity="center"
         android:layout_margin="10dp"
+        android:background="@drawable/classic_button"
         android:text="HARD"
         android:textSize="40sp"/>
 
@@ -48,6 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="60dp"
+        android:background="@drawable/classic_button"
         android:text="Back"
         android:textSize="30sp" />
 

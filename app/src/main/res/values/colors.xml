@@ -8,4 +8,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="Bred">#EE4B2B</color>
+    <color name="blue_sky">#65c0e5</color>
+    <color name="light_sky">#87ceeb</color>
 </resources>
