@@ -18,13 +18,14 @@
         app:backgroundTint="#00FFFFFF"
         app:icon="@drawable/soundon"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="80dp"
         android:layout_gravity="center"
-        android:layout_marginTop="80dp"
-        android:text="Sudoku"
-        android:textSize="55sp"/>
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="10dp"
+        android:foreground="@drawable/sudoku" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/playbtn"

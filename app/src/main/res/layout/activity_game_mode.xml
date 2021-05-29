@@ -8,15 +8,14 @@
     android:orientation="vertical"
     tools:context=".GameMode">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="80dp"
         android:layout_gravity="center"
         android:layout_marginTop="80dp"
         android:layout_marginBottom="10dp"
-        android:text="@string/game_mode"
-        android:textStyle="bold"
-        android:textSize="50sp"/>
+        android:foreground="@drawable/gamemode"
+        android:textSize="50sp" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/easy_mode"
