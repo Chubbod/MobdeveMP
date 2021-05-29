@@ -1,6 +1,7 @@
 package ph.edu.dlsu.s12.chuajohn.finalproject.sudoku.view;
 
 import android.content.Context;
+import android.graphics.Canvas;
 import android.graphics.drawable.shapes.Shape;
 import android.util.AttributeSet;
 import android.view.View;
@@ -15,6 +16,7 @@ import ph.edu.dlsu.s12.chuajohn.finalproject.sudoku.game.SudokuChecker;
 //SudokuGrid will allow actions to occur in the board
 public class SudokuGrid extends GridView {
 
+    private Canvas canvas;
     private Context context;
 
     public SudokuGrid(final Context context, AttributeSet attributeSet) {

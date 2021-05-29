@@ -23,7 +23,6 @@ public class SudokuCell extends SudokuBaseCell {
         super.onDraw(canvas);
         drawBackground(canvas, 1);
         drawNumbers(canvas);
-
         drawLines(canvas, 1);
     }
 

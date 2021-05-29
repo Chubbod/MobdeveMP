@@ -7,9 +7,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import ph.edu.dlsu.s12.chuajohn.finalproject.sudoku.History;
 import ph.edu.dlsu.s12.chuajohn.finalproject.sudoku.R;
 
 public class GameActivity extends AppCompatActivity {
@@ -18,6 +20,7 @@ public class GameActivity extends AppCompatActivity {
     Timer timer;
     TimerTask timerTask;
     Double time = 0.0;
+    private ArrayList<History> historyArrayList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,10 +34,15 @@ public class GameActivity extends AppCompatActivity {
         timeText = (TextView) findViewById(R.id.timeText);
         Intent intent = getIntent();
         timer = new Timer();
+        historyArrayList = new ArrayList<>();
 
         TimeStart();
         int num = getIntent().getExtras().getInt("level");
         GameEngine.getInstance().createGrid(this, num);
+        History history = new History();
+        history.setDifficulty(getIntent().getExtras().getString("mode"));
+        history.setTime(getTimeText());
+        historyArrayList.add(history);
     }
 
     private void TimeStart(){

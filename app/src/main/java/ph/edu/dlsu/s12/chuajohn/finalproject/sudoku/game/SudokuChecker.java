@@ -22,7 +22,7 @@ public class SudokuChecker {
     //Checking Horizontally, Vertically, and Regionally.
     //Checking the Single
     public boolean SingleSudokuCheck(int[][] sudoku) {
-        return (SingleHorizontalCheck(sudoku) || SingleVerticalCheck(sudoku) || SingleRegionalCheck(sudoku));
+        return (SingleHorizontalCheck(sudoku) && SingleVerticalCheck(sudoku) && SingleRegionalCheck(sudoku));
     }
 
     //Checking if there exist a 0 in the sudoku
@@ -30,11 +30,11 @@ public class SudokuChecker {
         for(int i = 0; i < 9; i++) {
             for(int j = 0; j < 9; j++) {
                 if(sudoku[i][j]==0) {
-                    return false;
+                    return true;
                 }
             }
         }
-        return true;
+        return false;
     }
 
     //Checking Regionally
@@ -85,7 +85,7 @@ public class SudokuChecker {
                 for(int k = i; k < xReg * 3 + 3; k++) {
                     for(int l = j; l < yReg * 3 + 3; l++) {
                         //If there exist a similar number in the vertical position
-                        if((k!=i || l!=j) && sudoku[i][j] == sudoku[k][l]) {
+                        if((k!=i || l!=j) && sudoku[i][j] == sudoku[k][l] || sudoku[k][l] == 0) {
                             return false;
                         }
                     }
@@ -119,7 +119,9 @@ public class SudokuChecker {
         for(int i = 0; i < 9; i++) {
             for(int j = 0; j < 9; j++) {
                 for(int k = j + 1; j < 9; j++) {
-                    return false;
+                    if(sudoku[i][j] == sudoku[i][k] || sudoku[i][k] == 0) {
+                        return false;
+                    }
                 }
             }
         }
@@ -150,7 +152,7 @@ public class SudokuChecker {
         for(int i = 0; i < 9; i++) {
             for(int j = 0; j < 9; j++) {
                 for(int k = j + 1; j < 9; j++) {
-                    if(sudoku[j][i]==sudoku[k][i]) {
+                    if(sudoku[j][i]==sudoku[k][i] || sudoku[k][i] == 0) {
                         return false;
                     }
                 }

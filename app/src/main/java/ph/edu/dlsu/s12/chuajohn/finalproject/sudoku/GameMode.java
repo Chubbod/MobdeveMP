@@ -12,7 +12,7 @@ import ph.edu.dlsu.s12.chuajohn.finalproject.sudoku.game.GameActivity;
 
 public class GameMode extends AppCompatActivity {
 
-    private Button easy_mode, normal_mode, hard_mode, back_mode;
+    private Button easy_mode, normal_mode, hard_mode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +32,7 @@ public class GameMode extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(GameMode.this, GameActivity.class);
-                intent.putExtra("mode", "easy");
+                intent.putExtra("mode", "EASY");
                 intent.putExtra("level", 18);
                 mediaPlayer.start();
                 finish();
@@ -44,7 +44,7 @@ public class GameMode extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(GameMode.this, GameActivity.class);
-                intent.putExtra("mode", "normal");
+                intent.putExtra("mode", "NORMAL");
                 intent.putExtra("level", 36);
                 mediaPlayer.start();
                 finish();
@@ -56,7 +56,7 @@ public class GameMode extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(GameMode.this, GameActivity.class);
-                intent.putExtra("mode", "hard");
+                intent.putExtra("mode", "HARD");
                 intent.putExtra("level", 54);
                 mediaPlayer.start();
                 finish();

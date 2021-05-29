@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.widget.Toast;
 
 import ph.edu.dlsu.s12.chuajohn.finalproject.sudoku.GameMode;
+import ph.edu.dlsu.s12.chuajohn.finalproject.sudoku.History;
+import ph.edu.dlsu.s12.chuajohn.finalproject.sudoku.MainMenuActivity;
 import ph.edu.dlsu.s12.chuajohn.finalproject.sudoku.game.GameActivity;
 import ph.edu.dlsu.s12.chuajohn.finalproject.sudoku.game.GameEngine;
 import ph.edu.dlsu.s12.chuajohn.finalproject.sudoku.game.SudokuChecker;
@@ -69,7 +71,7 @@ public class BoardGrid {
                     .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            Intent intent = new Intent(context, GameMode.class);
+                            Intent intent = new Intent(context, MainMenuActivity.class);
                             context.startActivity(intent);
                         }
                     })
@@ -80,6 +82,7 @@ public class BoardGrid {
                     //Nothing happens
                 } else {
                     Toast.makeText(context, "Wrong", Toast.LENGTH_SHORT).show();
+
                 }
             }
         }
