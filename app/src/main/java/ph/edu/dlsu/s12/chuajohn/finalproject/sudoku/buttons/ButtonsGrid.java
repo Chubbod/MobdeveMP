@@ -53,9 +53,8 @@ public class ButtonsGrid extends GridView {
 
                 ButtonsNumber number;
                 number = (ButtonsNumber) view;
-                number.setTextSize(10);
+                number.setTextSize(20);
                 number.setId(position);
-
                 number.setText(String.valueOf(position + 1));
                 number.setNum(position+1);
                 return number;

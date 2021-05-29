@@ -1,16 +1,13 @@
 package ph.edu.dlsu.s12.chuajohn.finalproject.sudoku.view;
 
 import android.content.Context;
-import android.graphics.Paint;
-import android.util.AttributeSet;
 import android.view.View;
-
-import androidx.annotation.Nullable;
 
 public class SudokuBaseCell extends View {
 
     private int val;
     private boolean modify = true;
+    private SudokuCell[][] sudoku = new SudokuCell[9][9];
 
     public SudokuBaseCell(Context context) {
         super(context);
@@ -39,5 +36,10 @@ public class SudokuBaseCell extends View {
             this.val = val;
         }
         invalidate();
+    }
+
+    public void setCoordinates(int position) {
+        int xPos = position % 9;
+        int yPos = position / 9;
     }
 }

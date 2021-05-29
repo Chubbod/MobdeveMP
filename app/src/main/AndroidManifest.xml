@@ -9,13 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Sudoku">
-        <activity android:name=".GameMode">
+        <activity android:name="ph.edu.dlsu.s12.chuajohn.finalproject.sudoku.GameMode">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".game.GameActivity">
+        <activity android:name="ph.edu.dlsu.s12.chuajohn.finalproject.sudoku.game.GameActivity">
         </activity>
     </application>
 

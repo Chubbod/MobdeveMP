@@ -9,58 +9,60 @@
     tools:context=".game.GameActivity">
 
     <TextView
+        android:id="@+id/timeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_margin="10dp"
-        android:text="00:00"
+        android:layout_margin="30dp"
+        android:text="@string/_00_00_00"
         android:textSize="30sp"
         android:textColor="@color/black"/>
 
     <ph.edu.dlsu.s12.chuajohn.finalproject.sudoku.view.SudokuGrid
         android:id="@+id/sudokuGrid"
-        android:layout_width="390dp"
-        android:layout_height="390dp"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
         android:layout_margin="10dp"
         android:numColumns="9"
-        android:horizontalSpacing="1dp"
-        android:verticalSpacing="1dp"
-        android:background=""/>
+        android:horizontalSpacing="0dp"
+        android:verticalSpacing="0dp"/>
+
+    <LinearLayout
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:background="@drawable/classic_button"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/wrongs"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/number"
+            android:textSize="20sp"/>
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
-
-        <LinearLayout
-            android:layout_width="180dp"
-            android:layout_height="match_parent"
-            android:gravity="center">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Wrongs:"
-                android:textSize="20sp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:text="#"
-                android:textSize="20sp"/>
-        </LinearLayout>
+        android:gravity="center">
 
         <ph.edu.dlsu.s12.chuajohn.finalproject.sudoku.buttons.ButtonsGrid
             android:id="@+id/buttonsGrid"
-            android:layout_width="210dp"
-            android:layout_height="210dp"
-            android:layout_margin="10dp"
-            android:numColumns="3" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:numColumns="3"
+            android:horizontalSpacing="3dp"
+            android:verticalSpacing="3dp"/>
 
     </LinearLayout>
-
-
-
 
 </LinearLayout>

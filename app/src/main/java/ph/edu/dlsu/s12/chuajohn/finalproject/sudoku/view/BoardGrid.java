@@ -1,8 +1,14 @@
 package ph.edu.dlsu.s12.chuajohn.finalproject.sudoku.view;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.widget.Toast;
 
+import ph.edu.dlsu.s12.chuajohn.finalproject.sudoku.GameMode;
+import ph.edu.dlsu.s12.chuajohn.finalproject.sudoku.game.GameActivity;
+import ph.edu.dlsu.s12.chuajohn.finalproject.sudoku.game.GameEngine;
 import ph.edu.dlsu.s12.chuajohn.finalproject.sudoku.game.SudokuChecker;
 
 //BoardGrid will contain the Sudoku board and the values of the 9by9
@@ -58,7 +64,23 @@ public class BoardGrid {
         }
         //All Complete
         if(SudokuChecker.getInstance().SudokuCheck(grid)) {
-            Toast.makeText(context, "You solved the Sudoku", Toast.LENGTH_LONG).show();
+            new AlertDialog.Builder(context)
+                    .setTitle("Sudoku Puzzle Solved!")
+                    .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            Intent intent = new Intent(context, GameMode.class);
+                            context.startActivity(intent);
+                        }
+                    })
+                    .show();
+        } else {
+            if(SudokuChecker.getInstance().ZeroSudokuCheck(grid)) {
+                //If there exist a 0 in the board then nothing happens
+            } else if(SudokuChecker.getInstance().SingleSudokuCheck(grid)) {
+                Toast.makeText(context, "Wrong", Toast.LENGTH_SHORT).show();
+            }
+
         }
     }
 }

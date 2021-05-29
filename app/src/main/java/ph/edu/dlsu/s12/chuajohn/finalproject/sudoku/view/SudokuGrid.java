@@ -1,7 +1,6 @@
 package ph.edu.dlsu.s12.chuajohn.finalproject.sudoku.view;
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.graphics.drawable.shapes.Shape;
 import android.util.AttributeSet;
 import android.view.View;
@@ -9,16 +8,14 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
-import android.widget.Toast;
 
-import ph.edu.dlsu.s12.chuajohn.finalproject.sudoku.R;
 import ph.edu.dlsu.s12.chuajohn.finalproject.sudoku.game.GameEngine;
+import ph.edu.dlsu.s12.chuajohn.finalproject.sudoku.game.SudokuChecker;
 
 //SudokuGrid will allow actions to occur in the board
 public class SudokuGrid extends GridView {
 
     private Context context;
-    Shape shape;
 
     public SudokuGrid(final Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
@@ -67,6 +64,7 @@ public class SudokuGrid extends GridView {
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
+            GameEngine.getInstance().getGrid().getItem(position).setCoordinates(position);
             return GameEngine.getInstance().getGrid().getItem(position);
         }
     }

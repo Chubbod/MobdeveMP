@@ -1,12 +1,9 @@
 package ph.edu.dlsu.s12.chuajohn.finalproject.sudoku.buttons;
 
 import android.content.Context;
-import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.view.View;
-import android.widget.Button;
 
-import ph.edu.dlsu.s12.chuajohn.finalproject.sudoku.R;
 import ph.edu.dlsu.s12.chuajohn.finalproject.sudoku.game.GameEngine;
 
 //ButtonsNumber assigns a tile from the grid to the a specific button

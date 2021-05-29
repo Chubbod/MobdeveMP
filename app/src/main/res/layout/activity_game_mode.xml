@@ -12,48 +12,50 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_margin="50dp"
-        android:text="GAME MODE"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/game_mode"
+        android:textStyle="bold"
         android:textSize="30sp"/>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/easy_mode"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_gravity="center"
         android:layout_margin="10dp"
-        android:background="@drawable/classic_button"
-        android:text="EASY"
-        android:textSize="40sp"/>
+        android:text="@string/easy"
+        android:textSize="40sp"
+        android:background="@drawable/classic_button"/>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/normal_mode"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_gravity="center"
         android:layout_margin="10dp"
         android:background="@drawable/classic_button"
-        android:text="MEDIUM"
+        android:text="@string/medium"
         android:textSize="40sp"/>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/hard_mode"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_gravity="center"
         android:layout_margin="10dp"
         android:background="@drawable/classic_button"
-        android:text="HARD"
+        android:text="@string/hard"
         android:textSize="40sp"/>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/back_mode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_margin="60dp"
+        android:layout_marginTop="120dp"
         android:background="@drawable/classic_button"
-        android:text="Back"
-        android:textSize="30sp" />
+        android:text="@string/back"
+        android:textSize="28sp" />
 
 </LinearLayout>
