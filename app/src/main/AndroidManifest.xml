@@ -12,8 +12,8 @@
         <activity android:name=".GameHistoryActivity"></activity>
         <activity android:name=".ThemeActivity" />
         <activity android:name=".MainMenuActivity" />
-        <activity android:name=".StartActivity" />
-        <activity android:name=".GameMode">
+        <activity android:name=".GameMode" />
+        <activity android:name=".StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
