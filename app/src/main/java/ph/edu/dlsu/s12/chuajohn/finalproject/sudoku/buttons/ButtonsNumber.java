@@ -28,4 +28,5 @@ public class ButtonsNumber extends androidx.appcompat.widget.AppCompatButton imp
         this.num = num;
     }
 
+    //connect to startactivity
 }
