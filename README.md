@@ -14,6 +14,8 @@
   - 2 board colors
 * Match Reviews
 * Music
+  - Sound effects on button
+  - Background Music
 
 ## Removed Features:
 * Abilities
