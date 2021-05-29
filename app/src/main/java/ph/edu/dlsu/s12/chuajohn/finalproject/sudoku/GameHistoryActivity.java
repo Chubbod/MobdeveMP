@@ -10,8 +10,8 @@ import java.util.ArrayList;
 
 public class GameHistoryActivity extends AppCompatActivity {
 
-    private ListView ghListView;
-    private ArrayList<History> ghArrayList;
+    private ListView listview;
+    private ArrayList<History> historyArrayList;
     private GamesAdapter gamesAdapter;
 
     @Override
@@ -21,25 +21,24 @@ public class GameHistoryActivity extends AppCompatActivity {
 
         data(); //dummy data
 
-        gamesAdapter = new GamesAdapter(this, ghArrayList);
-        ghListView.setAdapter((ListAdapter) gamesAdapter);
+        gamesAdapter = new GamesAdapter(this, historyArrayList);
+        listview.setAdapter(gamesAdapter);
     }
 
-    public void data(){
-        ghListView = findViewById(R.id.ghListView);
-        ghArrayList = new ArrayList<>();
-        History gh = new History ();
+    private void data(){
+        listview = (ListView) findViewById(R.id.listview);
+        historyArrayList = new ArrayList<>();
 
-        gh.setDifficulty("Easy");
-        gh.setTime("00:04:21");
-        gh.setWrong("3");
-        ghArrayList.add(gh);
+        History history = new History ();
+        history.setDifficulty("Easy");
+        history.setTime("00:04:21");
+        history.setWrong("3");
+        historyArrayList.add(history);
 
-        gh = new History ();
-        gh.setDifficulty("Hard");
-        gh.setTime("00:10:21");
-        gh.setWrong("22");
-        ghArrayList.add(gh);
-
+        history = new History ();
+        history.setDifficulty("Hard");
+        history.setTime("00:10:21");
+        history.setWrong("22");
+        historyArrayList.add(history);
     }
 }

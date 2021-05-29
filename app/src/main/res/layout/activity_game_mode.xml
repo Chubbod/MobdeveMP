@@ -16,7 +16,7 @@
         android:layout_marginBottom="10dp"
         android:text="@string/game_mode"
         android:textStyle="bold"
-        android:textSize="30sp"/>
+        android:textSize="50sp"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/easy_mode"
@@ -26,6 +26,7 @@
         android:layout_margin="10dp"
         android:text="@string/easy"
         android:textSize="40sp"
+        android:textColor="@color/white"
         android:background="@drawable/classic_button"/>
 
     <androidx.appcompat.widget.AppCompatButton
@@ -36,7 +37,8 @@
         android:layout_margin="10dp"
         android:background="@drawable/classic_button"
         android:text="@string/medium"
-        android:textSize="40sp"/>
+        android:textSize="40sp"
+        android:textColor="@color/white"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/hard_mode"
@@ -46,16 +48,6 @@
         android:layout_margin="10dp"
         android:background="@drawable/classic_button"
         android:text="@string/hard"
-        android:textSize="40sp"/>
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/back_mode"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="120dp"
-        android:background="@drawable/classic_button"
-        android:text="@string/back"
-        android:textSize="28sp" />
-
+        android:textSize="40sp"
+        android:textColor="@color/white"/>
 </LinearLayout>

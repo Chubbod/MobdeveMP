@@ -76,11 +76,12 @@ public class BoardGrid {
                     .show();
         } else {
             if(SudokuChecker.getInstance().ZeroSudokuCheck(grid)) {
-                //If there exist a 0 in the board then nothing happens
-            } else if(SudokuChecker.getInstance().SingleSudokuCheck(grid)) {
-                Toast.makeText(context, "Wrong", Toast.LENGTH_SHORT).show();
+                if(SudokuChecker.getInstance().SingleSudokuCheck(grid)) {
+                    //Nothing happens
+                } else {
+                    Toast.makeText(context, "Wrong", Toast.LENGTH_SHORT).show();
+                }
             }
-
         }
     }
 }

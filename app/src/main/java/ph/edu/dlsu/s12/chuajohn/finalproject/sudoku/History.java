@@ -5,7 +5,6 @@ public class History {
     private String time = "";
     private String wrong = "";
 
-
     public String getDifficulty() {
         return difficulty;
     }

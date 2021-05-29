@@ -4,43 +4,45 @@ import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
 
 import java.util.ArrayList;
 
-import static ph.edu.dlsu.s12.chuajohn.finalproject.sudoku.R.layout.gamehistory_row;
-
-public class GamesAdapter {
+public class GamesAdapter extends ArrayAdapter<History> {
     private Activity activity;
-    private ArrayList<History> ghArrayList;
+    private ArrayList<History> historyArrayList;
 
-    public GamesAdapter(Activity activity, ArrayList<History> ghArrayList) {
-        super(activity, gamehistory_row, ghArrayList);
+    public GamesAdapter(Activity activity, ArrayList<History> historyArrayList) {
+        super(activity, R.layout.gamehistory, historyArrayList);
         this.activity = activity;
-        this.ghArrayList = ghArrayList;
+        this.historyArrayList = historyArrayList;
     }
 
+    @NonNull
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(int position, @NonNull View convertView, ViewGroup parent) {
         View rowView = convertView;
 
         if (rowView == null){
             LayoutInflater inflater = activity.getLayoutInflater();
-            rowView = inflater.inflate(R.layout.activity_game_history, null);
+            rowView = inflater.inflate(R.layout.gamehistory, null);
 
             ViewHolder gamesViewHolder = new ViewHolder();
-            gamesViewHolder.difficulty = (TextView) rowView.findViewById(R.id.difficultyTV);
-            gamesViewHolder.timer = (TextView) rowView.findViewById(R.id.timeTV);
-            gamesViewHolder.wrong = (TextView) rowView.findViewById(R.id.wrongTV);
-
+            gamesViewHolder.difficulty = (TextView) rowView.findViewById(R.id.difficulty);
+            gamesViewHolder.timer = (TextView) rowView.findViewById(R.id.timer);
+            gamesViewHolder.wrongs = (TextView) rowView.findViewById(R.id.wrongs);
 
             rowView.setTag(gamesViewHolder);
         }
+
         final ViewHolder holder = (ViewHolder) rowView.getTag();
-        History info = ghArrayList.get(position);
+        History info = historyArrayList.get(position);
         holder.difficulty.setText(info.getDifficulty());
         holder.timer.setText(info.getTime());
-        holder.wrong.setText(info.getWrong());
+        holder.wrongs.setText(info.getWrong());
 
         return rowView;
     }
@@ -48,7 +50,6 @@ public class GamesAdapter {
     static class ViewHolder {
         public TextView difficulty;
         public TextView timer;
-        public TextView wrong;
+        public TextView wrongs;
     }
-
 }

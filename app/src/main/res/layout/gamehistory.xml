@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="6dp">
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,26 +13,22 @@
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="12dp"
-            android:fontFamily="sans-serif-light"
-            android:text="Difficulty:  "
+            android:layout_marginStart="10dp"
+            android:text="@string/difficulty"
+            android:textStyle="bold"
             android:textAlignment="textStart"
-            android:textColor="#040101"
             android:textSize="25sp" />
 
         <TextView
-            android:id="@+id/difficultyTV"
-            android:layout_width="130dp"
+            android:id="@+id/difficulty"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="150dp"
-            android:fontFamily="sans-serif-light"
-            android:text="Medium"
+            android:layout_marginEnd="10dp"
+            android:text="@string/medium"
             android:textAlignment="textEnd"
-            android:textColor="#040101"
-            android:textSize="24sp" />
-
+            android:textSize="24sp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -42,26 +38,22 @@
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="100dp"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="12dp"
-            android:fontFamily="sans-serif-light"
-            android:text="Timer: "
+            android:layout_marginStart="10dp"
+            android:text="@string/timer"
+            android:textStyle="bold"
             android:textAlignment="textStart"
-            android:textColor="#040101"
             android:textSize="25sp" />
 
         <TextView
-            android:id="@+id/timeTV"
-            android:layout_width="150dp"
+            android:id="@+id/timer"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="140dp"
-            android:fontFamily="sans-serif-light"
-            android:text="00:05:45"
+            android:layout_marginEnd="10dp"
+            android:text="@string/_00_05_45"
             android:textAlignment="textEnd"
-            android:textColor="#040101"
             android:textSize="24sp" />
-
     </LinearLayout>
 
     <LinearLayout
@@ -73,24 +65,20 @@
         <TextView
             android:layout_width="120dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="12dp"
-            android:fontFamily="sans-serif-light"
-            android:text="Wrongs: "
+            android:layout_marginStart="10dp"
+            android:text="@string/wrongs"
+            android:textStyle="bold"
             android:textAlignment="textStart"
-            android:textColor="#040101"
             android:textSize="25sp" />
 
         <TextView
-            android:id="@+id/wrongTV"
-            android:layout_width="150dp"
+            android:id="@+id/wrongs"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="120dp"
-            android:fontFamily="sans-serif-light"
-            android:text="5"
+            android:layout_marginEnd="10dp"
+            android:text="@string/_5"
             android:textAlignment="textEnd"
-            android:textColor="#040101"
             android:textSize="24sp" />
-
     </LinearLayout>
 
 

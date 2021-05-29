@@ -3,6 +3,7 @@ package ph.edu.dlsu.s12.chuajohn.finalproject.sudoku;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -21,11 +22,13 @@ public class MainMenuActivity extends AppCompatActivity {
         gamemodeBtn = findViewById(R.id.gamemodeBtn);
         gamehistoryBtn = findViewById(R.id.gamehistoryBtn);
         themeBtn = findViewById(R.id.themeBtn);
+        final MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.slick);
 
         gamemodeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainMenuActivity.this, GameMode.class);
+                mediaPlayer.start();
                 startActivity(intent);
             }
         });
@@ -34,6 +37,7 @@ public class MainMenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainMenuActivity.this, ThemeActivity.class);
+                mediaPlayer.start();
                 startActivity(intent);
             }
         });
@@ -42,6 +46,7 @@ public class MainMenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainMenuActivity.this, GameHistoryActivity.class);
+                mediaPlayer.start();
                 startActivity(intent);
             }
         });

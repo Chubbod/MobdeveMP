@@ -8,4 +8,14 @@
     <string name="_00_00_00">00:00:00</string>
     <string name="wrongs">Wrongs:</string>
     <string name="number">#</string>
+    <string name="game_history">Game History</string>
+    <string name="theme">Theme</string>
+    <string name="game_menu">GAME MENU</string>
+    <string name="play">PLAY</string>
+    <string name="game_history">Game History</string>
+    <string name="timer">Timer:</string>
+    <string name="difficulty">Difficulty:</string>
+    <string name="_00_05_45">00:05:45</string>
+    <string name="wrongs">Wrongs:</string>
+    <string name="_5">5</string>
 </resources>
