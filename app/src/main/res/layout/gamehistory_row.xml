@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="6dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#70C4EA"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:fontFamily="sans-serif-light"
+            android:text="Difficulty:  "
+            android:textAlignment="textStart"
+            android:textColor="#040101"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/difficultyTV"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="150dp"
+            android:fontFamily="sans-serif-light"
+            android:text="Medium"
+            android:textAlignment="textEnd"
+            android:textColor="#040101"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#EFC68A"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:fontFamily="sans-serif-light"
+            android:text="Timer: "
+            android:textAlignment="textStart"
+            android:textColor="#040101"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/timeTV"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="140dp"
+            android:fontFamily="sans-serif-light"
+            android:text="00:05:45"
+            android:textAlignment="textEnd"
+            android:textColor="#040101"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FB7A7A"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:fontFamily="sans-serif-light"
+            android:text="Wrongs: "
+            android:textAlignment="textStart"
+            android:textColor="#040101"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/wrongTV"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="120dp"
+            android:fontFamily="sans-serif-light"
+            android:text="5"
+            android:textAlignment="textEnd"
+            android:textColor="#040101"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
