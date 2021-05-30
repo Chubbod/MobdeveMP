@@ -33,7 +33,6 @@ public class GamesAdapter extends ArrayAdapter<History> {
             ViewHolder gamesViewHolder = new ViewHolder();
             gamesViewHolder.difficulty = (TextView) rowView.findViewById(R.id.difficulty);
             gamesViewHolder.timer = (TextView) rowView.findViewById(R.id.timer);
-            gamesViewHolder.wrongs = (TextView) rowView.findViewById(R.id.wrongs);
 
             rowView.setTag(gamesViewHolder);
         }
@@ -42,7 +41,6 @@ public class GamesAdapter extends ArrayAdapter<History> {
         History info = historyArrayList.get(position);
         holder.difficulty.setText(info.getDifficulty());
         holder.timer.setText(info.getTime());
-        holder.wrongs.setText(info.getWrong());
 
         return rowView;
     }

@@ -18,6 +18,7 @@ public class BoardGrid {
 
     private Context context;
     private SudokuCell[][] sudoku = new SudokuCell[9][9];
+    private int[][] temp;
 
     public BoardGrid(Context context) {
         this.context = context;
@@ -28,7 +29,7 @@ public class BoardGrid {
         }
     }
 
-    public void setGrid(int[][] grid) {
+    public void setGrid(int[][] grid, int[][] temp) {
         for(int i = 0; i < 9; i++) {
             for(int j = 0; j < 9; j++) {
                 sudoku[i][j].setInitVal(grid[i][j]);
@@ -37,6 +38,7 @@ public class BoardGrid {
                 }
             }
         }
+        this.temp = temp;
     }
 
     public SudokuCell[][] getGrid() {
@@ -58,10 +60,20 @@ public class BoardGrid {
     }
 
     public void checkBoard() {
+        int check = 0;
+
         int[][] grid = new int[9][9];
         for(int i = 0; i < 9; i++) {
             for(int j = 0; j < 9; j++) {
                 grid[i][j] = getItem(i, j).getValue();
+
+                printSudoku(temp);
+
+                if(temp[i][j]==grid[i][j]) {
+                    check = 1;
+                } else {
+                    check = 2;
+                }
             }
         }
         //All Complete
@@ -77,14 +89,20 @@ public class BoardGrid {
                     })
                     .show();
         } else {
-            if(SudokuChecker.getInstance().ZeroSudokuCheck(grid)) {
-                if(SudokuChecker.getInstance().SingleSudokuCheck(grid)) {
-                    //Nothing happens
-                } else {
-                    Toast.makeText(context, "Wrong", Toast.LENGTH_SHORT).show();
-
-                }
+            if(check==1) {
+                //nothing happens
+            } else {
+                Toast.makeText(context, "Wrong", Toast.LENGTH_SHORT).show();
             }
+        }
+    }
+
+    private void printSudoku(int[][] sudoku) {
+        for(int i = 0; i < 9; i++) {
+            for(int j = 0; j < 9; j++) {
+                System.out.print(sudoku[j][i] + " | ");
+            }
+            System.out.println();
         }
     }
 }

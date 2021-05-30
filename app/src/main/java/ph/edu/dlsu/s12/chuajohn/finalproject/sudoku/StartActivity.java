@@ -26,6 +26,7 @@ public class StartActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(StartActivity.this, MainMenuActivity.class);
+                finish();
                 mediaPlayer.start();
                 startActivity(intent);
             }

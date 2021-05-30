@@ -10,15 +10,18 @@ import android.widget.Button;
 
 public class MainMenuActivity extends AppCompatActivity {
 
-    private Button gamemodeBtn;
-    private Button themeBtn;
-    private Button gamehistoryBtn;
+    private Button gamemodeBtn, themeBtn, gamehistoryBtn;
+    private Button backBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
 
+        init();
+    }
+
+    private void init() {
         gamemodeBtn = findViewById(R.id.gamemodeBtn);
         gamehistoryBtn = findViewById(R.id.gamehistoryBtn);
         themeBtn = findViewById(R.id.themeBtn);

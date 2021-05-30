@@ -22,6 +22,7 @@ public class SudokuBaseCell extends View {
         modify = false;
     }
 
+    //setInitalValue get the number and invalidate the onDraw method
     public void setInitVal(int val) {
         this.val = val;
         invalidate();
@@ -31,6 +32,7 @@ public class SudokuBaseCell extends View {
         return val;
     }
 
+    //invalidate and set the Value
     public void setValue(int val) {
         if(modify) {
             this.val = val;
@@ -38,8 +40,15 @@ public class SudokuBaseCell extends View {
         invalidate();
     }
 
-    public void setCoordinates(int position) {
+    public void setCoordinate(int position) {
         int xPos = position % 9;
         int yPos = position / 9;
+        for(int i = 0; i < 9; i++) {
+            for(int j = 0; j < 9; j++) {
+                if(sudoku[i][j]==sudoku[xPos][yPos]) {
+                    invalidate();
+                }
+            }
+        }
     }
 }

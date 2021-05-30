@@ -10,4 +10,6 @@
     <color name="Bred">#EE4B2B</color>
     <color name="blue_sky">#65c0e5</color>
     <color name="light_sky">#87ceeb</color>
+    <color name="light_dark_gray">#928688</color>
+    <color name="light_wood">#e7cfb4</color>
 </resources>

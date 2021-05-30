@@ -2,6 +2,7 @@ package ph.edu.dlsu.s12.chuajohn.finalproject.sudoku.view;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
 import android.graphics.drawable.shapes.Shape;
 import android.util.AttributeSet;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 
+import ph.edu.dlsu.s12.chuajohn.finalproject.sudoku.R;
 import ph.edu.dlsu.s12.chuajohn.finalproject.sudoku.game.GameEngine;
 import ph.edu.dlsu.s12.chuajohn.finalproject.sudoku.game.SudokuChecker;
 
@@ -66,7 +68,14 @@ public class SudokuGrid extends GridView {
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            GameEngine.getInstance().getGrid().getItem(position).setCoordinates(position);
+            //View v = convert View
+
+            //if(v == null)
+            //LayoutInflator inflater = ((Activity)context).getLayoutInflator();
+            //v = inflater(R.layout.cell, parent, false);
+
+            //return v;
+            GameEngine.getInstance().getGrid().getItem(position).setCoordinate(position);
             return GameEngine.getInstance().getGrid().getItem(position);
         }
     }

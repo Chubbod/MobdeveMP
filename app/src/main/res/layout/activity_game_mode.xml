@@ -49,4 +49,16 @@
         android:text="@string/hard"
         android:textSize="40sp"
         android:textColor="@color/white"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/backBtn"
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:layout_margin="60dp"
+        android:text="@string/back"
+        android:textSize="24sp"
+        android:textColor="@color/white"
+        android:background="@drawable/classic_button"/>
+
 </LinearLayout>

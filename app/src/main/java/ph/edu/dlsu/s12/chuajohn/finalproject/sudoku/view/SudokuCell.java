@@ -21,39 +21,21 @@ public class SudokuCell extends SudokuBaseCell {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        drawBackground(canvas, 1);
+        drawBackground(canvas);
         drawNumbers(canvas);
-        drawLines(canvas, 1);
+        drawLines(canvas);
     }
 
     //Changes the color of the Tile
-    public void drawBackground(Canvas canvas, int num) {
-        //Classic
-        if(num==1) {
-            canvas.drawRGB(255,255,255);
-        } else if(num==2) {
-            //Sky Blue
-            canvas.drawRGB(51, 172 ,221);
-        } else if(num==3) {
-            //Tomato
-            canvas.drawRGB(255, 99, 71);
-        } else if(num==4) {
-            //Lime Green
-            canvas.drawRGB(50, 205, 50);
-        }
+    public void drawBackground(Canvas canvas) {
+        canvas.drawRGB(	255, 255, 255);
     }
 
     //Apply border to the board
-    private void drawLines(Canvas canvas, int num) {
-        if(num==1) {
-            paint.setColor(Color.GRAY);
-            paint.setStrokeWidth(5);
-            paint.setStyle(Paint.Style.STROKE);
-        } else {
-            paint.setColor(Color.BLACK);
-            paint.setStrokeWidth(10);
-            paint.setStyle(Paint.Style.STROKE);
-        }
+    private void drawLines(Canvas canvas) {
+        paint.setColor(Color.BLACK);
+        paint.setStrokeWidth(5);
+        paint.setStyle(Paint.Style.STROKE);
         canvas.drawRect(0, 0, getWidth(), getHeight(), paint);
     }
 
