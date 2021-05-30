@@ -12,6 +12,7 @@
 * Change the Theme of the tiles (Discontinued)
   - 3 tile colors
   - 2 board colors
+  - (Reason) unable to attach the color and board to the Cell
 * Match Reviews
 * Music
   - Sound effects on button
