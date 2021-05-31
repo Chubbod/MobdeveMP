@@ -7,17 +7,21 @@
 ## Application Platform & Software:
 * Mobile (Android Studio)
 
+## API requirement:
+API 23: Android 6.0 (Marshmallow)
+
 ## Features:
 * 3 sets of Sudoku Puzzle Difficulty (Easy, Normal, Hard)
-* Change the Theme of the tiles (Discontinued)
-  - 3 tile colors
-  - 2 board colors
-  - (Reason) unable to attach the color and board to the Cell
-* Match Reviews
+* Sudoku puzzle will be checked after puzzle is complete
 * Music
   - Sound effects on button
   - Background Music
 
-## Removed Features:
+## Discontinued Features:
 * Abilities
+* Game History
+  - (Reason) Game highlight will not load into history
+* Theme
+  - (Reason 1) unable to attach the background to the board
+  - (Reason 2) unable to attach color to the cell
 * Special Effects (Optional)
