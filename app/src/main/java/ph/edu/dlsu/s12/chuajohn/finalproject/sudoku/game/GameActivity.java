@@ -63,7 +63,6 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(GameActivity.this, GameMode.class);
-                finish();
                 mediaPlayer.start();
                 startActivity(intent);
             }

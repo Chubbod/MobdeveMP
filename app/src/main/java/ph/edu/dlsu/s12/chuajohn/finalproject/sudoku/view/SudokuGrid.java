@@ -33,7 +33,7 @@ public class SudokuGrid extends GridView {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 int x = position % 9;
                 int y = position / 9;
-                Toast.makeText(context, "X: " + x + " Y: " + y, Toast.LENGTH_LONG).show();
+                Toast.makeText(context, "X: " + x + " Y: " + y, Toast.LENGTH_SHORT).show();
                 GameEngine.getInstance().getPosition(x, y);
             }
         });
