@@ -8,7 +8,7 @@
 * Mobile (Android Studio)
 
 ## API requirement:
-API 23: Android 6.0 (Marshmallow)
+* API 23: Android 6.0 (Marshmallow)
 
 ## Features:
 * 3 sets of Sudoku Puzzle Difficulty (Easy, Normal, Hard)
