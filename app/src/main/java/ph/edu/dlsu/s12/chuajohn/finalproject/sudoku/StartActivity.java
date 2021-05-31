@@ -54,7 +54,7 @@ public class StartActivity extends AppCompatActivity {
             }
         });
     }
-
+    
     @Override
     protected void onDestroy() {
         super.onDestroy();

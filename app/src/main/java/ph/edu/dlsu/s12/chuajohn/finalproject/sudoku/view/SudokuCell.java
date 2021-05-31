@@ -25,6 +25,7 @@ public class SudokuCell extends SudokuBaseCell {
         drawBackground(canvas);
         drawNumbers(canvas);
         drawLines(canvas);
+
     }
 
     //Changes the color of the Tile
@@ -46,17 +47,11 @@ public class SudokuCell extends SudokuBaseCell {
         paint.setTextSize(60);
         paint.setStyle(Paint.Style.FILL);
 
-        temp.setColor(Color.GRAY);
-        paint.setTextSize(60);
-        paint.setStyle(Paint.Style.FILL);
-
         Rect bounds = new Rect();
         paint.getTextBounds(String.valueOf(getValue()), 0, String.valueOf(getValue()).length(), bounds);
 
         if(getValue()!=0) {
             canvas.drawText(String.valueOf(getValue()), (getWidth() - bounds.width())/2, (getHeight() + bounds.height())/2, paint);
-        } else {
-            canvas.drawText(String.valueOf(getValue()), (getWidth() - bounds.width())/2, (getHeight() + bounds.height())/2, temp);
         }
     }
 

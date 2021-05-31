@@ -70,13 +70,6 @@ public class SudokuGrid extends GridView {
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            //View v = convert View
-
-            //if(v == null)
-            //LayoutInflator inflater = ((Activity)context).getLayoutInflator();
-            //v = inflater(R.layout.cell, parent, false);
-
-            //return v;
             GameEngine.getInstance().getGrid().getItem(position).setCoordinate(position);
             return GameEngine.getInstance().getGrid().getItem(position);
         }
