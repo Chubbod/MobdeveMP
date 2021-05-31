@@ -34,13 +34,15 @@ public class ThemeActivity extends AppCompatActivity {
         wood = findViewById(R.id.wood);
         sudokuGrid = findViewById(R.id.sudokuGrid);
         backBtn = findViewById(R.id.backBtn);
-        final MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.slick);
+        final MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.zit);
+        MediaPlayer media = MediaPlayer.create(this, R.raw.slick);
 
         classic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                themeView.setImageResource(R.drawable.classicboard);
                 Toast.makeText(ThemeActivity.this, "Classic Board installed", Toast.LENGTH_SHORT).show();
+                mediaPlayer.start();
                 /*Cannot connect to board*/
             }
         });
@@ -50,6 +52,7 @@ public class ThemeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 themeView.setImageResource(R.drawable.grayboard);
                 Toast.makeText(ThemeActivity.this, "Gray Board installed", Toast.LENGTH_SHORT).show();
+                mediaPlayer.start();
                 /*Cannot connect to board*/
             }
         });
@@ -59,6 +62,7 @@ public class ThemeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 themeView.setImageResource(R.drawable.woodboard);
                 Toast.makeText(ThemeActivity.this, "Wood Board installed", Toast.LENGTH_SHORT).show();
+                mediaPlayer.start();
                 /*Cannot connect to board*/
             }
         });
@@ -67,8 +71,8 @@ public class ThemeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ThemeActivity.this, MainMenuActivity.class);
+                media.start();
                 finish();
-                mediaPlayer.start();
                 startActivity(intent);
             }
         });

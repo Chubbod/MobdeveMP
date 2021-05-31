@@ -11,11 +11,12 @@ import ph.edu.dlsu.s12.chuajohn.finalproject.sudoku.game.GameEngine;
 //SudokuCell will design the board with border lines and design the numbers
 public class SudokuCell extends SudokuBaseCell {
 
-    private Paint paint;
+    private Paint paint, temp;
 
     public SudokuCell(Context context) {
         super(context);
         paint = new Paint();
+        temp = new Paint();
     }
 
     @Override
@@ -45,11 +46,17 @@ public class SudokuCell extends SudokuBaseCell {
         paint.setTextSize(60);
         paint.setStyle(Paint.Style.FILL);
 
+        temp.setColor(Color.GRAY);
+        paint.setTextSize(60);
+        paint.setStyle(Paint.Style.FILL);
+
         Rect bounds = new Rect();
         paint.getTextBounds(String.valueOf(getValue()), 0, String.valueOf(getValue()).length(), bounds);
 
         if(getValue()!=0) {
             canvas.drawText(String.valueOf(getValue()), (getWidth() - bounds.width())/2, (getHeight() + bounds.height())/2, paint);
+        } else {
+            canvas.drawText(String.valueOf(getValue()), (getWidth() - bounds.width())/2, (getHeight() + bounds.height())/2, temp);
         }
     }
 

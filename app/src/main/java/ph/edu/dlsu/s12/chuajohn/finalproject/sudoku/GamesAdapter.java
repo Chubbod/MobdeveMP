@@ -21,6 +21,11 @@ public class GamesAdapter extends ArrayAdapter<History> {
         this.historyArrayList = historyArrayList;
     }
 
+    public void addGame (History history) {
+        historyArrayList.add(0, history);
+        notifyDataSetChanged();
+    }
+
     @NonNull
     @Override
     public View getView(int position, @NonNull View convertView, ViewGroup parent) {

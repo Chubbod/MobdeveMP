@@ -3,18 +3,23 @@ package ph.edu.dlsu.s12.chuajohn.finalproject.sudoku.game;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
+
 import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
 import ph.edu.dlsu.s12.chuajohn.finalproject.sudoku.GameMode;
+import ph.edu.dlsu.s12.chuajohn.finalproject.sudoku.GamesAdapter;
 import ph.edu.dlsu.s12.chuajohn.finalproject.sudoku.History;
 import ph.edu.dlsu.s12.chuajohn.finalproject.sudoku.MainMenuActivity;
 import ph.edu.dlsu.s12.chuajohn.finalproject.sudoku.R;
@@ -28,8 +33,8 @@ public class GameActivity extends AppCompatActivity {
     TimerTask timerTask;
     Double time = 0.0;
     private ArrayList<History> historyArrayList;
-    private SudokuGrid sudokuGrid;
     private Button backBtn;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,20 +45,19 @@ public class GameActivity extends AppCompatActivity {
 
     //Start the Game based on GameMode
     private void init() {
+        final MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.slick);
         timeText = (TextView) findViewById(R.id.timeText);
         backBtn = (Button) findViewById(R.id.backBtn);
         Intent intent = getIntent();
-        timer = new Timer();
-        historyArrayList = new ArrayList<>();
-        final MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.slick);
 
+        //Start the timer
+        timer = new Timer();
         TimeStart();
+
         int num = getIntent().getExtras().getInt("level");
         GameEngine.getInstance().createGrid(this, num);
-        History history = new History();
-        history.setDifficulty(getIntent().getExtras().getString("mode"));
-        history.setTime(getTimeText());
-        historyArrayList.add(history);
+
+        addNewData();
 
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,8 +70,10 @@ public class GameActivity extends AppCompatActivity {
         });
     }
 
-    public void BackgroundChange() {
-
+    private void addNewData() {
+        historyArrayList = new ArrayList<>();
+        historyArrayList.add(new History(getIntent().getExtras().getString("mode"), getTimeText()));
+        saveData();
     }
 
     private void TimeStart(){
@@ -99,5 +105,12 @@ public class GameActivity extends AppCompatActivity {
         return String.format("%02d", hrs) + " : " + String.format("%02d", min) + " : " + String.format("%02d", sec);
     }
 
-
+    private void saveData(){
+        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("sharedGames", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        Gson gson = new Gson();
+        String json = gson.toJson(historyArrayList);
+        editor.putString("games", json);
+        editor.commit();
+    }
 }

@@ -4,6 +4,13 @@ public class History {
     private String difficulty = "";
     private String time = "";
 
+    public History(){}
+
+    public History(String difficulty, String time) {
+        this.difficulty = difficulty;
+        this.time = time;
+    }
+
     public String getDifficulty() {
         return difficulty;
     }
@@ -19,4 +26,5 @@ public class History {
     public void setTime(String time) {
         this.time = time;
     }
+
 }

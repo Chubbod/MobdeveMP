@@ -36,6 +36,7 @@ public class GameMode extends AppCompatActivity {
                 intent.putExtra("mode", "EASY");
                 intent.putExtra("level", 18);
                 mediaPlayer.start();
+                finish();
                 startActivity(intent);
             }
         });
@@ -47,6 +48,7 @@ public class GameMode extends AppCompatActivity {
                 intent.putExtra("mode", "NORMAL");
                 intent.putExtra("level", 36);
                 mediaPlayer.start();
+                finish();
                 startActivity(intent);
             }
         });
@@ -58,6 +60,7 @@ public class GameMode extends AppCompatActivity {
                 intent.putExtra("mode", "HARD");
                 intent.putExtra("level", 54);
                 mediaPlayer.start();
+                finish();
                 startActivity(intent);
             }
         });

@@ -25,7 +25,6 @@ public class GameEngine {
     public void createGrid(Context context, int num) {
         int[][] sudoku = SudokuGenerator.getInstance().GridGenerate();
         int[][] temp = sudoku;
-        printSudoku(temp);
         sudoku = SudokuGenerator.getInstance().RemoveElements(sudoku, num);
         grid = new BoardGrid(context);
         grid.setGrid(sudoku, temp);
@@ -47,13 +46,4 @@ public class GameEngine {
         grid.checkBoard();
     }
 
-    //Printing the Sudoku into system view
-    private void printSudoku(int[][] sudoku) {
-        for(int i = 0; i < 9; i++) {
-            for(int j = 0; j < 9; j++) {
-                System.out.print(sudoku[j][i] + " | ");
-            }
-            System.out.println();
-        }
-    }
 }

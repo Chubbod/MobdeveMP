@@ -19,24 +19,6 @@ public class SudokuChecker {
         return (HorizontalCheck(sudoku) || VerticalCheck(sudoku) || RegionalCheck(sudoku));
     }
 
-    //Checking Horizontally, Vertically, and Regionally.
-    //Checking the Single
-    public boolean SingleSudokuCheck(int[][] sudoku) {
-        return (SingleHorizontalCheck(sudoku) && SingleVerticalCheck(sudoku) && SingleRegionalCheck(sudoku));
-    }
-
-    //Checking if there exist a 0 in the sudoku
-    public boolean ZeroSudokuCheck(int[][] sudoku) {
-        for(int i = 0; i < 9; i++) {
-            for(int j = 0; j < 9; j++) {
-                if(sudoku[i][j]==0) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
     //Checking Regionally
     private boolean RegionalCheck(int[][] sudoku) {
         for(int xReg = 0; xReg < 3; xReg++) {
@@ -66,35 +48,6 @@ public class SudokuChecker {
         return true;
     }
 
-    //Checking for equal values in a single regional
-    private boolean SingleRegionalCheck(int[][] sudoku) {
-        for(int xReg = 0; xReg < 3; xReg++) {
-            for(int yReg = 0; yReg < 3; yReg++) {
-                if(!SingleRegionalChecks(sudoku, xReg, yReg)) {
-                    return false;
-                }
-            }
-        }
-        return true;
-    }
-
-    //Condition Equation to checking regionally
-    private boolean SingleRegionalChecks(int[][] sudoku, int xReg, int yReg) {
-        for(int i = xReg * 3; i < xReg * 3 + 3; i++) {
-            for(int j = yReg * 3; j < yReg * 3 + 3; j++) {
-                for(int k = i; k < xReg * 3 + 3; k++) {
-                    for(int l = j; l < yReg * 3 + 3; l++) {
-                        //If there exist a similar number in the vertical position
-                        if((k!=i || l!=j) && sudoku[i][j] == sudoku[k][l] || sudoku[k][l] == 0) {
-                            return false;
-                        }
-                    }
-                }
-            }
-        }
-        return true;
-    }
-
     //Checking Vertically
     private boolean VerticalCheck(int[][] sudoku) {
         for(int i = 0; i < 9; i++) {
@@ -105,20 +58,6 @@ public class SudokuChecker {
 
                 for(int k = j + 1; k < 9; k++) {
                     //If there exist a similar number in the vertical position
-                    if(sudoku[i][j] == sudoku[i][k] || sudoku[i][k] == 0) {
-                        return false;
-                    }
-                }
-            }
-        }
-        return true;
-    }
-
-    //Checking for equal values in a single vertical
-    private boolean SingleVerticalCheck(int[][] sudoku) {
-        for(int i = 0; i < 9; i++) {
-            for(int j = 0; j < 9; j++) {
-                for(int k = j + 1; j < 9; j++) {
                     if(sudoku[i][j] == sudoku[i][k] || sudoku[i][k] == 0) {
                         return false;
                     }
@@ -147,17 +86,4 @@ public class SudokuChecker {
         return true;
     }
 
-    //Checking for equal values in a single horizontal
-    private boolean SingleHorizontalCheck(int[][] sudoku) {
-        for(int i = 0; i < 9; i++) {
-            for(int j = 0; j < 9; j++) {
-                for(int k = j + 1; j < 9; j++) {
-                    if(sudoku[j][i]==sudoku[k][i] || sudoku[k][i] == 0) {
-                        return false;
-                    }
-                }
-            }
-        }
-        return true;
-    }
 }

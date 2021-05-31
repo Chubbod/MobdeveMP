@@ -26,10 +26,13 @@ public class MainMenuActivity extends AppCompatActivity {
         gamehistoryBtn = findViewById(R.id.gamehistoryBtn);
         themeBtn = findViewById(R.id.themeBtn);
 
+        final MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.slick);
+
         gamemodeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainMenuActivity.this, GameMode.class);
+                mediaPlayer.start();
                 startActivity(intent);
             }
         });
@@ -38,6 +41,7 @@ public class MainMenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainMenuActivity.this, ThemeActivity.class);
+                mediaPlayer.start();
                 startActivity(intent);
             }
         });
@@ -46,6 +50,7 @@ public class MainMenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainMenuActivity.this, GameHistoryActivity.class);
+                mediaPlayer.start();
                 startActivity(intent);
             }
         });
