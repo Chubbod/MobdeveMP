@@ -19,8 +19,7 @@ import ph.edu.dlsu.s12.chuajohn.finalproject.sudoku.game.SudokuChecker;
 //SudokuGrid will allow actions to occur in the board
 public class SudokuGrid extends GridView {
 
-    private Canvas canvas;
-    private Context context;
+    Context context;
 
     public SudokuGrid(final Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
@@ -70,7 +69,6 @@ public class SudokuGrid extends GridView {
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            GameEngine.getInstance().getGrid().getItem(position).setCoordinate(position);
             return GameEngine.getInstance().getGrid().getItem(position);
         }
     }

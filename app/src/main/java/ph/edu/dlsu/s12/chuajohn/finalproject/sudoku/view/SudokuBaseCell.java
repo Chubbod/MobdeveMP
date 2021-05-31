@@ -39,16 +39,4 @@ public class SudokuBaseCell extends View {
         }
         invalidate();
     }
-
-    public void setCoordinate(int position) {
-        int xPos = position % 9;
-        int yPos = position / 9;
-        for(int i = 0; i < 9; i++) {
-            for(int j = 0; j < 9; j++) {
-                if(sudoku[i][j]==sudoku[xPos][yPos]) {
-                    invalidate();
-                }
-            }
-        }
-    }
 }
